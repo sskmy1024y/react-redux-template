@@ -1,5 +1,7 @@
 {
   "name": "react-template",
+  "author": "sho",
+  "private": true,
   "version": "0.0.0",
   "scripts": {
     "start": "webpack-dev-server --port 3000 ",
@@ -15,7 +17,9 @@
     "stylelint:styled:fix": "yarn run stylelint:styled --fix",
     "lint": "yarn run stylelint && yarn run stylelint:styled",
     "lint:fix": "yarn run stylelint:fix && yarn run stylelint:styled:fix && yarn run prettier:fix",
-    "test": "jest"
+    "test": "jest",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@types/react": "^16.9.23",
@@ -27,8 +31,15 @@
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.14",
+    "@storybook/addon-knobs": "^5.3.14",
+    "@storybook/addon-links": "^5.3.14",
+    "@storybook/addon-storyshots": "^5.3.14",
+    "@storybook/addons": "^5.3.14",
+    "@storybook/react": "^5.3.14",
     "@testing-library/react": "^9.5.0",
     "@types/jest": "^25.1.4",
+    "@types/storybook__react": "^5.2.1",
     "@types/styled-components": "^5.0.1",
     "@typescript-eslint/eslint-plugin": "^2.22.0",
     "@typescript-eslint/parser": "^2.22.0",
@@ -40,6 +51,9 @@
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-sort-imports-es6-autofix": "^0.5.0",
     "jest": "^25.1.0",
+    "jest-resolve": "^25.1.0",
+    "jest-snapshot": "^25.1.0",
+    "jest-styled-components": "^7.0.0",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "prettier-eslint": "^9.0.1",
@@ -56,5 +70,10 @@
     "webpack-dev-server": "^3.10.3",
     "webpackbar": "^4.0.0"
   },
-  "private": true
+  "jest": {
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ]
+  }
 }

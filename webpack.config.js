@@ -1,44 +1,45 @@
-const path = require("path");
+const path = require('path')
 
-const WebpackBarPlugin = require("webpackbar");
+const WebpackBarPlugin = require('webpackbar')
 
-const outputPath = path.resolve(__dirname, "public");
+const sourcePath = path.resolve(__dirname, 'src')
+const outputPath = path.resolve(__dirname, 'public')
 
 function webpackConfig(rawEnv, optionArg) {
   return {
-    mode: "development",
-    devtool: "source-map",
-    entry: "./src/index.tsx",
+    mode: 'development',
+    devtool: 'source-map',
+    entry: './src/index.tsx',
     output: {
       path: outputPath,
-      filename: "bundle.js"
+      filename: 'bundle.js'
     },
     module: {
       rules: [
         {
           test: /\.(ts|tsx)?$/,
-          include: path.resolve(__dirname, "src"),
-          use: "ts-loader"
+          include: sourcePath,
+          use: 'ts-loader'
         },
         {
           test: /\.(js|jsx)?$/,
-          include: path.resolve(__dirname, "src"),
-          use: "babel-loader"
+          include: sourcePath,
+          use: 'babel-loader'
         },
         {
           test: /\.(css|scss)$/,
           use: [
             {
-              loader: "style-loader"
+              loader: 'style-loader'
             },
             {
-              loader: "css-loader",
+              loader: 'css-loader',
               options: {
                 modules: true
               }
             },
             {
-              loader: "sass-loader"
+              loader: 'sass-loader'
             }
           ]
         }
@@ -46,14 +47,14 @@ function webpackConfig(rawEnv, optionArg) {
     },
     plugins: [
       new WebpackBarPlugin({
-        name: "react-app",
-        color: "green",
+        name: 'react-app',
+        color: 'green',
         profile: true,
         fancy: true
       })
     ],
     resolve: {
-      extensions: [".ts", ".tsx", ".js", ".json"]
+      extensions: ['.ts', '.tsx', '.js', '.json']
     },
     devServer: {
       contentBase: outputPath,
@@ -61,7 +62,7 @@ function webpackConfig(rawEnv, optionArg) {
 
       disableHostCheck: false
     }
-  };
+  }
 }
 
-module.exports = webpackConfig;
+module.exports = webpackConfig
