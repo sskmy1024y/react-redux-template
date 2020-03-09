@@ -54,6 +54,7 @@ function webpackConfig(rawEnv, optionArg) {
       })
     ],
     resolve: {
+      modules: [sourcePath, 'node_modules'],
       extensions: ['.ts', '.tsx', '.js', '.json']
     },
     devServer: {

@@ -2,6 +2,7 @@
 
 const path = require('path')
 
+// eslint-disable-next-line no-undef
 const rootDir = path.join(__dirname, 'src')
 
 const config = {
@@ -42,4 +43,5 @@ const config = {
 
 config.globals.__STORYBOOK__ = false
 
+// eslint-disable-next-line no-undef
 module.exports = config

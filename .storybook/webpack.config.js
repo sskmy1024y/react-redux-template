@@ -1,23 +1,13 @@
 const path = require('path')
 
-const srcPath = './src'
+const sourcPath = path.resolve(__dirname, '../src')
 
-module.exports = ({ config, mode: upperMode }) => {
-  const mode = upperMode === 'PRODUCTION' ? 'production' : 'development'
-
-  return {
-    ...config,
-    mode,
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          use: 'ts-loader'
-        }
-      ]
-    },
-    resolve: {
-      modules: [...(config.resolve.modules || []), path.resolve(srcPath)]
-    }
-  }
+module.exports = ({ config }) => {
+  config.module.rules.push({
+    test: /\.(ts|tsx)$/,
+    use: 'ts-loader'
+  })
+  config.resolve.modules.push(sourcPath)
+  config.resolve.extensions.push('.ts', '.tsx')
+  return config
 }

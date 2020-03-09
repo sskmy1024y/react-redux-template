@@ -23,11 +23,6 @@
     "strict": true,
     "sourceMap": true,
     "target": "es5",
-    "paths": {
-      "@/*": [
-        "./*"
-      ]
-    },
     "strictNullChecks": true,
   },
   "exclude": [
