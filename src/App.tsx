@@ -1,6 +1,7 @@
 import React from "react";
 import ReactIcon from "./components/icons/ReactIcon";
 import styled, { keyframes } from "styled-components";
+import "./App.scss";
 
 function App() {
   return (

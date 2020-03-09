@@ -24,6 +24,23 @@ function webpackConfig(rawEnv, optionArg) {
           test: /\.(js|jsx)?$/,
           include: path.resolve(__dirname, "src"),
           use: "babel-loader"
+        },
+        {
+          test: /\.(css|scss)$/,
+          use: [
+            {
+              loader: "style-loader"
+            },
+            {
+              loader: "css-loader",
+              options: {
+                modules: true
+              }
+            },
+            {
+              loader: "sass-loader"
+            }
+          ]
         }
       ]
     },
