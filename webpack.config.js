@@ -7,7 +7,7 @@ const outputPath = path.resolve(__dirname, "public");
 function webpackConfig(rawEnv, optionArg) {
   return {
     mode: "development",
-    devtool: "eval-source-map",
+    devtool: "source-map",
     entry: "./src/index.tsx",
     output: {
       path: outputPath,
@@ -29,17 +29,19 @@ function webpackConfig(rawEnv, optionArg) {
     },
     plugins: [
       new WebpackBarPlugin({
-        name: "react-app"
+        name: "react-app",
+        color: "green",
+        profile: true,
+        fancy: true
       })
     ],
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".json"]
     },
     devServer: {
-      port: 3000,
       contentBase: outputPath,
       compress: true,
-      quiet: true,
+
       disableHostCheck: false
     }
   };
