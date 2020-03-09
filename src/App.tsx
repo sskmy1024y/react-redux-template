@@ -1,7 +1,7 @@
-import React from "react";
-import ReactIcon from "./components/icons/ReactIcon";
-import styled, { keyframes } from "styled-components";
-import "./App.scss";
+import './App.scss'
+import React from 'react'
+import ReactIcon from './components/icons/ReactIcon'
+import styled, { keyframes } from 'styled-components'
 
 function App() {
   return (
@@ -13,23 +13,19 @@ function App() {
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
-        <Link
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Link href='https://reactjs.org' target='_blank' rel='noopener noreferrer'>
           Learn React
         </Link>
       </Header>
     </AppContainer>
-  );
+  )
 }
 
-export default App;
+export default App
 
 const AppContainer = styled.div`
   text-align: center;
-`;
+`
 
 const Header = styled.header`
   background-color: #282c34;
@@ -40,11 +36,11 @@ const Header = styled.header`
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-`;
+`
 
 const Link = styled.a`
   color: #61dafb;
-`;
+`
 
 const appLogoSpin = keyframes`
   from {
@@ -53,8 +49,8 @@ const appLogoSpin = keyframes`
   to {
     transform: rotate(360deg);
   }
-`;
+`
 
 const SpinContainer = styled.div`
   animation: ${appLogoSpin} infinite 20s linear;
-`;
+`

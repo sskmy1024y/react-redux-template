@@ -29,7 +29,6 @@
       ]
     },
     "strictNullChecks": true,
-    "incremental": true
   },
   "exclude": [
     "node_modules",

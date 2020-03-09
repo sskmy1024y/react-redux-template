@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export const {
   useCallback,
@@ -11,6 +11,6 @@ export const {
   useReducer,
   useRef,
   useState
-} = React;
+} = React
 
 // export * from "./custom";
