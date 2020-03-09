@@ -1,5 +1,7 @@
 const path = require("path");
 
+const WebpackBarPlugin = require("webpackbar");
+
 const outputPath = path.resolve(__dirname, "public");
 
 function webpackConfig(rawEnv, optionArg) {
@@ -25,6 +27,11 @@ function webpackConfig(rawEnv, optionArg) {
         }
       ]
     },
+    plugins: [
+      new WebpackBarPlugin({
+        name: "react-app"
+      })
+    ],
     resolve: {
       extensions: [".ts", ".tsx", ".js", ".json"]
     },
@@ -32,8 +39,8 @@ function webpackConfig(rawEnv, optionArg) {
       port: 3000,
       contentBase: outputPath,
       compress: true,
-      // disableHostCheck ... localhost外からのアクセスを許可する
-      disableHostCheck: true
+      quiet: true,
+      disableHostCheck: false
     }
   };
 }

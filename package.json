@@ -2,7 +2,7 @@
   "name": "react-template",
   "version": "0.0.0",
   "scripts": {
-    "start": "webpack-dev-server --open",
+    "start": "webpack-dev-server",
     "build": "webpack",
     "watch": "webpack -w --config webpack.config.js"
   },
@@ -21,7 +21,8 @@
     "typescript": "^3.8.3",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpackbar": "^4.0.0"
   },
   "private": true
 }
