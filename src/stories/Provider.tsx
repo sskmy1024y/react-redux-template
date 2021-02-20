@@ -5,6 +5,7 @@ import thunkMiddleware from 'redux-thunk'
 import { Provider } from 'react-redux'
 import { State as RootState } from 'reducer'
 import { initialState } from 'reducer'
+import styled from 'styled-components'
 
 export default function StorybookProvider({
   story,
@@ -27,4 +28,16 @@ export default function StorybookProvider({
       {children}
     </Provider>
   )
+}
+
+export const Container = styled.div<{ width?: number | string }>`
+  width: ${({ width }) => (typeof width === 'number' ? `${width}px` : width)};
+  margin: 10px 10px 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+`
+
+Container.defaultProps = {
+  width: 698
 }

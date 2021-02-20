@@ -1,20 +1,23 @@
 import React from 'react'
 
-import { number, withKnobs } from '@storybook/addon-knobs'
-import { storiesOf } from '@storybook/react'
-// import Provider from 'stories/Provider'
+import { Meta, Story } from '@storybook/react'
 
-import { Container } from 'stories'
-import ReactIcon from 'components/icons/ReactIcon'
+import { Container } from 'stories/Provider'
+import {default as _ReactIcon} from 'components/icons/ReactIcon'
 import styled from 'styled-components'
 
-const storiesAll = storiesOf('Foundation|Icon', module)
-storiesAll.addDecorator(withKnobs)
-// storiesAll.addDecorator(story => <Provider story={story} />)
-storiesAll.add('Icons', () => {
-  const size = number('size', 50)
 
-  const Icons = [ReactIcon]
+export default {
+  title: 'Foundation/Icon',
+  component: _ReactIcon
+} as Meta
+
+interface Props {
+  size: number
+}
+
+const Template: Story<Props> = ({size}: Props) => {
+  const Icons = [_ReactIcon]
   return (
     <IconContainer>
       {Icons.map((Component, key) => (
@@ -24,13 +27,14 @@ storiesAll.add('Icons', () => {
       ))}
     </IconContainer>
   )
-})
+}
 
-storiesOf('Foundation|Icon', module)
-  .addDecorator(withKnobs)
-  .add('ReactIcon', () => {
-    return <ReactIcon />
-  })
+export const AllIcons = Template.bind({})
+AllIcons.args = {
+  size: 50
+}
+
+export const ReactIcon = _ReactIcon
 
 const IconContainer = styled.div`
   display: flex;
